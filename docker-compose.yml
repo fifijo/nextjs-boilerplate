@@ -1,0 +1,34 @@
+services:
+  dev:
+    container_name: project-dev
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+      args:
+        PROJECT: ${PROJECT}
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    environment:
+      - WATCHPACK_POLLING=true
+      - NEXT_TELEMETRY_DISABLED=1
+
+  prod-app:
+    container_name: project-prod-app
+    build:
+      context: .
+      dockerfile: ./docker/prod/app/Dockerfile
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=production
+
+  prod-docs:
+    container_name: project-prod-docs
+    build:
+      context: .
+      dockerfile: ./docker/prod/docs/Dockerfile
+    ports:
+      - "81:3000"
+    environment:
+      - NODE_ENV=production

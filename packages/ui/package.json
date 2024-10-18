@@ -9,7 +9,7 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
-    "./card": "./src/card.tsx"
+     "./components/*": "./src/components/*.tsx"
   },
   "license": "MIT",
   "scripts": {
