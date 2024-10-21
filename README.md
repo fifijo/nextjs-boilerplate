@@ -44,3 +44,34 @@ Additional tools already setup:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+## Release Process and Changelog
+
+We use [Semantic Versioning](https://semver.org/) for version numbers. All notable changes to this project are automatically documented in the release notes.
+
+### Automated Changelog
+
+Our project uses release-drafter to automatically generate changelogs based on PR titles and labels. When creating a pull request, please ensure that the title clearly describes the change and that appropriate labels are applied. This will help in generating accurate and informative release notes.
+
+### Creating a Release
+
+1. Ensure all changes for the release are merged into the main branch.
+
+2. Create a new tag with the version number:
+   ```
+   git tag vX.Y.Z
+   git push origin vX.Y.Z
+   ```
+
+3. The GitHub Actions workflow will automatically:
+   - Create a new GitHub release
+   - Generate release notes based on merged pull requests
+   - Build and push Docker images for the app and docs
+
+4. Review the auto-generated release notes on GitHub and make any necessary edits.
+
+5. Publish the release on GitHub.
+
+This automated process ensures that our changelog is always up-to-date and reflects all the changes made in each release. It reduces manual work and helps maintain consistency in our release notes.
+
+Remember to write clear and descriptive PR titles and use appropriate labels, as these will directly contribute to the quality of our release notes.
