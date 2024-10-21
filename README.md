@@ -23,6 +23,8 @@ Run commands with Turborepo:
 - `pnpm run format`: Format all apps and packages
 - `pnpm run type-check`: Check types in all apps and packages
 - `pnpm run clean`: Clean Turborepo
+- `pnpm run test`: Run tests
+- `pnpm run test:watch`: Run tests in watch mode
 
 Run commands with Docker:
  - `pnpm run docker:dev`: Start the development environment with all Next.js applications
