@@ -10,7 +10,7 @@
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
-     "test:watch": "turbo run test:watch",
+    "test:watch": "turbo run test:watch",
     "docker:dev": "docker-compose up dev",
     "docker:dev:app": "cross-env PROJECT=app docker-compose up dev",
     "docker:dev:docs": "cross-env PROJECT=docs docker-compose up dev",
