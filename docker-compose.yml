@@ -23,12 +23,12 @@ services:
     environment:
       - NODE_ENV=production
 
-  # prod-docs:
-  #   container_name: project-prod-docs
-  #   build:
-  #     context: .
-  #     dockerfile: ./docker/prod/docs/Dockerfile
-  #   ports:
-  #     - "81:3000"
-  #   environment:
-  #     - NODE_ENV=production
+  prod-docs:
+    container_name: project-prod-docs
+    build:
+      context: .
+      dockerfile: ./docker/prod/docs/Dockerfile
+    ports:
+      - "81:3000"
+    environment:
+      - NODE_ENV=production

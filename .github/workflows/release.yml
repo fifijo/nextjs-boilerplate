@@ -25,12 +25,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push Docker images
+      - name: Build and push app Docker image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.ref_name }} -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:latest -f docker/prod/app/dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.ref_name }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:latest
-      - uses: release-drafter/release-drafter@v6
+      - name: Build and push docs Docker image
+        run: |
+          # docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-docs:${{ github.ref_name }} -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-docs:latest -f docker/prod/docs/dockerfile .
+          # docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-docs:${{ github.ref_name }}
+          # docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-docs:latest
+      - uses: release-drafter/release-drafter@v5
         with:
           publish: true
           tag: ${{ github.ref_name }}
