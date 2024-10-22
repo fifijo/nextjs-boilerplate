@@ -2,6 +2,30 @@
 
 This is a [Next.js](https://nextjs.org/) boilerplate based on [Turborepo](https://turbo.build//) build system with [Tailwind CSS](https://tailwindcss.com/).
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-orange)
+
+## Installation
+
+To get started, clone the repository and run the following commands:
+
+```bash
+pnpm install
+```
+
+Make sure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.js.org/) installed.
+
+## Usage/Examples
+
+Once installed, you can start developing with:
+
+```bash
+pnpm run dev
+```
+
+You can then access your applications on `http://localhost:3000` for the app and `http://localhost:3000/docs` for the docs.
+
 ## What's inside?
 
 Boilerplate includes the following packages/apps:
@@ -75,3 +99,16 @@ Our project uses release-drafter to automatically generate changelogs based on P
 This automated process ensures that our changelog is always up-to-date and reflects all the changes made in each release. It reduces manual work and helps maintain consistency in our release notes.
 
 Remember to write clear and descriptive PR titles and use appropriate labels, as these will directly contribute to the quality of our release notes.
+
+## Contributing
+
+We welcome contributions from the community! Please follow these steps if you would like to contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your forked repository.
+5. Create a pull request describing your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
