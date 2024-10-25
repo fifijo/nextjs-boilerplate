@@ -32,3 +32,18 @@ services:
       - "81:3000"
     environment:
       - NODE_ENV=production
+
+  postgres:
+    container_name: project-postgres
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - "5432:5432"
+    volumes:
+     - db:/var/lib/postgresql/data
+
+volumes:
+  db:
