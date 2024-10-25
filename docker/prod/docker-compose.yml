@@ -1,0 +1,26 @@
+services:
+  prod-app:
+    container_name: project-prod-app
+    build:
+      context: ../../
+      dockerfile: ./docker/prod/app/Dockerfile
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+
+  postgres:
+    container_name: project-postgres
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - "5432:5432"
+    volumes:
+     - db:/var/lib/postgresql/data
+
+volumes:
+  db:
