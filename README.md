@@ -42,6 +42,7 @@ Boilerplate includes the following packages/apps:
 Run commands with Turborepo:
 - `pnpm build`: Build all apps and packages
 - `pnpm dev`: Develop all apps and packages
+  `pnpm dev:app`: Develop all apps and packages
 - `pnpm lint`: Lint all apps and packages
 - `pnpm format`: Format all apps and packages
 - `pnpm type-check`: Check types in all apps and packages
@@ -50,9 +51,7 @@ Run commands with Turborepo:
 - `pnpm test:watch`: Run tests in watch mode
 
 Run commands with Docker:
- - `pnpm docker:dev`: Start the development environment
  - `pnpm docker:dev:app`: Start the development environment for app application
- - `pnpm docker:build`: Build all Next.js applications
  - `pnpm docker:build:app`: Build app application
  - `pnpm docker:prod:app`: Deploy app application to production
 
