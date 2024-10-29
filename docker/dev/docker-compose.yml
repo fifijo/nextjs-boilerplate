@@ -1,4 +1,18 @@
 services:
+  postgres:
+    container_name: project-postgres
+    image: postgres:16-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    networks:
+      - next
+    volumes:
+     - db:/var/lib/postgresql/data
+
   dev:
     container_name: project-dev
     build:
@@ -9,21 +23,14 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
-    environment:
-      - WATCHPACK_POLLING=true
-      - NEXT_TELEMETRY_DISABLED=1
-
-  postgres:
-    container_name: project-postgres
-    image: postgres:17-alpine
-    restart: always
-    environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=secret
-    ports:
-      - "5432:5432"
-    volumes:
-     - db:/var/lib/postgresql/data
+    networks:
+      - next
+    depends_on:
+      - postgres
 
 volumes:
   db:
+
+networks:
+  next:
+    name: next
