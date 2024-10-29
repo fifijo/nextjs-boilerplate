@@ -3,14 +3,14 @@
   "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "^prisma:generate", "^prisma:push"],
+      "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
     "dev": {
-      "dependsOn": ["^prisma:generate", "^prisma:push"],
+      "dependsOn": ["^prisma:generate"],
       "cache": false,
       "persistent": true
     },
