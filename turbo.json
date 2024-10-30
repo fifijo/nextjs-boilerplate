@@ -10,6 +10,7 @@
       "dependsOn": ["^lint"]
     },
     "dev": {
+      "dependsOn": ["^prisma:generate"],
       "cache": false,
       "persistent": true
     },
@@ -17,6 +18,15 @@
       "outputs": []
     },
     "test:watch": {
+      "cache": false
+    },
+    "prisma:generate": {
+      "cache": false
+    },
+    "prisma:push": {
+      "cache": false
+    },
+    "prisma:seed": {
       "cache": false
     }
   }

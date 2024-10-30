@@ -22,6 +22,7 @@ Once installed, you can start developing with:
 
 ```bash
 pnpm run dev
+pnpm prisma:init
 ```
 
 You can then access your applications on `http://localhost:3000`.
@@ -32,7 +33,7 @@ Boilerplate includes the following packages/apps:
 
 ### Apps and Packages
 
-- `app`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
+- `app`: [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
 - `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `app` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
@@ -49,11 +50,17 @@ Run commands with Turborepo:
 - `pnpm clean`: Clean Turborepo
 - `pnpm test`: Run tests
 - `pnpm test:watch`: Run tests in watch mode
+- `pnpm prisma:init`: Init prisma
 
 Run commands with Docker:
- - `pnpm docker:dev:app`: Start the development environment for app application
- - `pnpm docker:build:app`: Build app application
- - `pnpm docker:prod:app`: Deploy app application to production
+ - `pnpm docker:dev:down`: Stop and remove dev containers, networks, images, and volumes.
+ - `pnpm docker:dev:stop`: Stop the dev container.
+ - `pnpm docker:dev:app:build`: Build the app image.
+ - `pnpm docker:dev:app:up`: Run the dev app containers.
+ - `pnpm docker:prod:down`: Stop and remove production containers, networks, images, and volumes.
+ - `pnpm docker:prod:stop`: Stop the production container.
+ - `pnpm docker:prod:app:build`: Build the production image.
+ - `pnpm docker:prod:app:up`: Run the production app containers.
 
 ### Utilities
 
@@ -63,6 +70,14 @@ Additional tools already setup:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+### Makefile
+
+Usage
+To use these commands, you can simply run make <command> in your terminal. For example, to build your project, you would run:
+
+`make build`
+For more information on each command, you can refer to the comments in the Makefile or check out the individual scripts defined in package.json file.
 
 ## Release Process and Changelog
 
@@ -85,7 +100,7 @@ Our project uses release-drafter to automatically generate changelogs based on P
 3. The GitHub Actions workflow will automatically:
    - Create a new GitHub release
    - Generate release notes based on merged pull requests
-   - Build and push Docker images for the app and docs
+   - Build and push Docker images
 
 4. Review the auto-generated release notes on GitHub and make any necessary edits.
 
