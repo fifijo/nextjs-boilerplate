@@ -13,7 +13,7 @@
       "cache": false,
       "persistent": true
     },
-    "test": {
+    "test:app": {
       "outputs": []
     },
     "test:watch": {
