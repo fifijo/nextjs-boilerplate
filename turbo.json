@@ -10,7 +10,6 @@
       "dependsOn": ["^lint"]
     },
     "dev": {
-      "dependsOn": ["^prisma:generate"],
       "cache": false,
       "persistent": true
     },
@@ -23,10 +22,7 @@
     "prisma:generate": {
       "cache": false
     },
-    "prisma:push": {
-      "cache": false
-    },
-    "prisma:seed": {
+    "prisma:migrate:dev": {
       "cache": false
     }
   }

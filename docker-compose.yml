@@ -1,0 +1,83 @@
+services:
+  monorepo-development:
+    container_name: monorepo-development
+    build:
+      context: .
+      target: installer
+    profiles:
+      - dev
+    ports:
+      - "3000:3000"
+    command: ["/bin/sh", "-c", "pnpm run dev"]
+    networks:
+      - monorepo
+    env_file:
+     - .env
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+
+  monorepo-production:
+    container_name: monorepo-production
+    build:
+      context: .
+    profiles:
+      - prod
+    ports:
+      - "3000:3000"
+    networks:
+      - monorepo
+    depends_on:
+      postgres-production:
+        condition: service_healthy
+        restart: true
+
+  postgres-development:
+    container_name: postgres-development
+    image: postgres:16-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    profiles:
+      - dev
+    networks:
+      - monorepo
+    volumes:
+     - db:/var/lib/postgresql/data
+
+  postgres-production:
+    container_name: postgres-production
+    image: postgres:16-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+    restart: always
+    env_file:
+     - ./.env
+    ports:
+      - "5432:5432"
+    profiles:
+      - prod
+    networks:
+      - monorepo
+
+volumes:
+  db:
+
+networks:
+  monorepo:
+    name: monorepo-network

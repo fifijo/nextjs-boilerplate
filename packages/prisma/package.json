@@ -6,8 +6,7 @@
     },
     "scripts": {
         "prisma:generate": "prisma generate",
-        "prisma:push": "prisma db push --skip-generate",
-        "prisma:seed": "ts-node prisma/seed.mjs"
+        "prisma:migrate:dev": " prisma migrate dev"
     },
     "dependencies": {
         "@prisma/client": "^5.21.1"

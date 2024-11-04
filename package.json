@@ -11,15 +11,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
-    "prisma:init": "turbo prisma:generate && turbo prisma:push && turbo prisma:seed",
-    "docker:dev:down": "cross-env PROJECT=app docker-compose -f ./docker/dev/docker-compose.yml down",
-    "docker:dev:stop": "cross-env PROJECT=app docker-compose -f ./docker/dev/docker-compose.yml stop",
-    "docker:dev:app:build": "cross-env PROJECT=app docker-compose -f ./docker/dev/docker-compose.yml build --no-cache",
-    "docker:dev:app:up": "cross-env PROJECT=app docker-compose -f ./docker/dev/docker-compose.yml up -d",
-    "docker:prod:down": "docker-compose -f ./docker/prod/docker-compose.yml down",
-    "docker:prod:stop": "docker-compose -f ./docker/prod/docker-compose.yml stop",
-    "docker:prod:app:build": "cross-env docker-compose -f ./docker/prod/docker-compose.yml build --no-cache prod-app",
-    "docker:prod:app:up": "docker-compose -f ./docker/prod/docker-compose.yml up -d prod-app"
+    "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate:dev"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
