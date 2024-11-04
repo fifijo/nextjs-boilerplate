@@ -24,6 +24,10 @@
     },
     "prisma:migrate:dev": {
       "cache": false
+    },
+    "type-check": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
