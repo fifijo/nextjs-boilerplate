@@ -9,7 +9,7 @@
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test:app": "turbo run test:app",
+    "test:app": "turbo test:app",
     "test:watch": "turbo run test:watch",
     "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate:dev"
   },
