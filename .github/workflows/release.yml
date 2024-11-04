@@ -25,16 +25,21 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Echo Docker Hub Username
+        run: echo ${{ secrets.DOCKERHUB_USERNAME }}
+
+      - name: Echo GitHub SHA
+        run: echo $GITHUB_SHA
+
       - name: Build Docker image
+        id: build_image
         run: |
-            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.sha }}
+          docker build "$GITHUB_WORKSPACE" -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate:$GITHUB_SHA --label dockerfile-path="Dockerfile"
       - name: Push Docker image
-        run: |
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.sha }}
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:latest
-      - uses: release-drafter/release-drafter@v5
-        with:
-          publish: true
-          tag: ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate:$GITHUB_SHA
+
+      - name: Logout from Docker Hub
+        run: docker logout
+
+      - name: End
+        run: echo "Docker image pushed to Docker Hub successfully"
