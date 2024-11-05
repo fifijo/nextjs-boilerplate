@@ -34,3 +34,9 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/monorepo:latest
+
+      - name: Logout from Docker Hub
+        run: docker logout
+
+      - name: End
+        run: echo "Docker image pushed to Docker Hub successfully"
