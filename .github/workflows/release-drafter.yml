@@ -2,13 +2,13 @@ name: Release Drafter
 
 on:
   workflow_run:
-    workflows: ["Release", "Build Docker Image"]
+    workflows: ["CI"]
     types:
       - completed
 
 jobs:
   update_release_draft:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: release-drafter/release-drafter@v6
