@@ -27,14 +27,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Docker image
         run: |
-            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.sha }} -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:latest --profile prod
+            docker compose build --profile prod
       - name: Push Docker image
         run: |
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:${{ github.sha }}
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate-app:latest
-      - uses: release-drafter/release-drafter@v5
-        with:
-          publish: true
-          tag: ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/monorepo-app:${{ github.sha }}
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/monorepo-app:latest
