@@ -34,7 +34,7 @@ jobs:
       - name: Build Docker image
         id: build_image
         run: |
-          docker build "$GITHUB_WORKSPACE" -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate:$GITHUB_SHA --label dockerfile-path="Dockerfile"
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate:$GITHUB_SHA --profile prod"
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-boilerplate:$GITHUB_SHA
 
