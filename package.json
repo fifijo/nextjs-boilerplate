@@ -14,18 +14,26 @@
     "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate:dev"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "cross-env": "^7.0.3",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "turbo": "^2.1.3",
-    "tsx": "^4.19.1",
-    "cross-env": "^7.0.3",
-    "vitest": "^2.1.3",
+    "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.1",
-    "@changesets/cli": "^2.27.9"
+    "tsx": "^4.19.1",
+    "turbo": "^2.1.3",
+    "vitest": "^2.1.3"
   },
   "packageManager": "pnpm@9.1.4",
   "engines": {
     "node": ">=18"
   },
-  "name": "turborepo-nextjs-tailwindcss"
+  "name": "turborepo-nextjs-tailwindcss",
+  "simple-git-hooks": {
+    "pre-commit": "turbo lint && turbo type-check",
+    "pre-push": "turbo build",
+    "preserveUnused": true
+  }
 }
