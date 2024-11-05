@@ -10,6 +10,7 @@ RUN apk add --no-cache libc6-compat && apk update && corepack enable && pnpm ins
 WORKDIR /app
 
 FROM base AS builder
+RUN pnpm install turbo --global
 COPY . .
 RUN turbo prune --scope=app --docker
 
