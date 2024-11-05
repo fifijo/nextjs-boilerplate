@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Docker image
         run: |
-            docker compose --profile prod build
+            docker compose --profile prod build --no-cache
       - name: Push Docker image
         run: |
             docker push ${{ secrets.DOCKERHUB_USERNAME }}/monorepo-app:${{ github.sha }}
