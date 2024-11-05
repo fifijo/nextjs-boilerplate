@@ -1,7 +1,11 @@
-name: Release
+name: Build Docker Image
+
 on:
   push:
-    tags: ['v*']
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
 jobs:
   release:
     runs-on: ubuntu-22.04

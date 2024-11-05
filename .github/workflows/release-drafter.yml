@@ -2,7 +2,7 @@ name: Release Drafter
 
 on:
   workflow_run:
-    workflows: ["Release"]
+    workflows: ["Release", "Build Docker Image"]
     types:
       - completed
 
