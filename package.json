@@ -32,7 +32,7 @@
   },
   "name": "turborepo-nextjs-tailwindcss",
   "simple-git-hooks": {
-    "pre-commit": "turbo lint && turbo type-check",
+    "pre-commit": "commitlint",
     "pre-push": "turbo build",
     "preserveUnused": true
   }
