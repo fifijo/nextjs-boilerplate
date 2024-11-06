@@ -1,6 +1,6 @@
-## Turborepo (Docker + Prisma + Postgres + NextJS + Tailwind + Typescript) monorepo starter
+## Next.js Monorepo Boilerplate
 
-This is a [Next.js](https://nextjs.org/) boilerplate based on [Turborepo](https://turbo.build//) build system with [Tailwind CSS](https://tailwindcss.com/), dockerized ✨🐳, with Prisma for ORM, TypeScript and more!
+Welcome to the Next.js Monorepo Boilerplate! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo.
 
 ## 🚀 What's inside?
 
@@ -16,6 +16,8 @@ Additional tools already setup:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Changeset]
+- [Commitlint]
 
 
 ## 🤖 Installation
@@ -24,9 +26,12 @@ To get started, clone the repository. Make sure you have [Node.js](https://nodej
 
 ## 🤸 Quick Start
 
+This project is Docker-ready, supporting both development and production environments. But you don't have to use it, if you prefer using local tools like Node.js, pnpm, etc., feel free to do so! Just check `package.json` for available scripts.
+
 ### Development
 
 Copy [.env.example] and rename it to `.env` then add your environment variables.
+
 
 1. Build the image.
 
@@ -41,6 +46,8 @@ Copy [.env.example] and rename it to `.env` then add your environment variables.
 ```
 
 You can then access your applications on `http://localhost:3000`.
+
+To build production image, just replace set `prod` in  `--profile` flag.
 
 
 ### Makefile
