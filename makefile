@@ -12,3 +12,6 @@ dev-down:
 
 dev-build:
 	docker-compose --profile dev build --no-cache
+
+prod-build:
+	pnpm clean && docker-compose --profile prod build --no-cache
