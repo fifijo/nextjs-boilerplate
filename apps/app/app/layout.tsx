@@ -1,19 +1,17 @@
-import "./globals.css";
-import "@repo/ui/styles.css";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "App web",
-};
+import { Suspense } from 'react'
+import { GlobalToaster } from '@/components/global-toaster'
+import '@/app/globals.css';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) : JSX.Element {
+ return (
+  <html lang='en'>
+   <body>
+    {children}
+    <Suspense>
+     <GlobalToaster />
+    </Suspense>
+   </body>
+  </html>
+ )
 }

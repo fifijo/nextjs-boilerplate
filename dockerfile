@@ -27,6 +27,7 @@ RUN pnpm install
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 
+RUN turbo prisma:generate
 RUN turbo run build --filter=app
 
 # use alpine as the thinest image

@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test:app": "turbo test:app",
     "test:watch": "turbo run test:watch",
-    "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate:dev",
+    "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate",
     "clean:next": "find . -name \".next\" -type d -prune -exec rm -rf '{}' +",
     "clean:turbo": "find . -name \".turbo\" -type d -prune -exec rm -rf '{}' +",
     "clean:node_modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +"
