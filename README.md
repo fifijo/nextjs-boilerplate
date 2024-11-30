@@ -1,4 +1,4 @@
-## Next.js Monorepo Boilerplate
+## Next.js Monorepo Boilerplate  WORK IN PROGRESS
 
 Welcome to the Next.js Monorepo Boilerplate! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo.
 
