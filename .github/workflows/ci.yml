@@ -39,7 +39,7 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     - name: Generate Prisma
-      run: cd apps/app && pnpm prisma:generatr
+      run: cd apps/app && pnpm prisma:generate
 
     - name: Build
       run: pnpm build
