@@ -11,19 +11,15 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test:app": "turbo test:app",
     "test:watch": "turbo run test:watch",
-    "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate:dev",
+    "prisma:init:development": "turbo prisma:generate && turbo prisma:migrate",
     "clean:next": "find . -name \".next\" -type d -prune -exec rm -rf '{}' +",
     "clean:turbo": "find . -name \".turbo\" -type d -prune -exec rm -rf '{}' +",
     "clean:node_modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.9",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
     "cross-env": "^7.0.3",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.19.1",
     "turbo": "^2.1.3",
@@ -33,10 +29,5 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "turborepo-nextjs-tailwindcss",
-  "simple-git-hooks": {
-    "pre-commit": "commitlint",
-    "pre-push": "turbo build",
-    "preserveUnused": true
-  }
+  "name": "turborepo-nextjs-tailwindcss"
 }

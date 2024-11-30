@@ -4,7 +4,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["NODE_ENV"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -22,7 +23,10 @@
     "prisma:generate": {
       "cache": false
     },
-    "prisma:migrate:dev": {
+    "prisma:migrate": {
+      "cache": false
+    },
+    "prisma:studio": {
       "cache": false
     },
     "type-check": {

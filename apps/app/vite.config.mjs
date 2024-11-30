@@ -9,6 +9,6 @@ export default defineConfig({
     environment: "jsdom",
     exclude: [...configDefaults.exclude],
     include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
-    setupFiles: ["./src/config/setup-tests.js"],
+    setupFiles: ["./config/setup-tests.js"],
   },
 });

@@ -16,8 +16,6 @@ Additional tools already setup:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
-- [Changeset]
-- [Commitlint]
 
 
 ## 🤖 Installation
@@ -47,7 +45,7 @@ Copy [.env.example] and rename it to `.env` then add your environment variables.
 
 You can then access your applications on `http://localhost:3000`.
 
-To build production image, just replace set `prod` in  `--profile` flag.
+To build production image, just set `prod` in  `--profile` flag.
 
 
 ### Makefile
