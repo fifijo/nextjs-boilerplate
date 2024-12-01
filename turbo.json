@@ -26,9 +26,6 @@
     "prisma:migrate": {
       "cache": false
     },
-    "prisma:studio": {
-      "cache": false
-    },
     "type-check": {
       "cache": false,
       "persistent": true

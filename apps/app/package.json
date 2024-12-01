@@ -11,8 +11,7 @@
     "test:app": "vitest run",
     "test:watch": "vitest",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio"
+    "prisma:migrate": "prisma migrate dev"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
