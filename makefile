@@ -15,3 +15,6 @@ dev-build:
 
 prod-build:
 	pnpm clean && docker-compose --profile prod build --no-cache
+
+prod-up:
+	pnpm clean && docker-compose --profile prod up -d

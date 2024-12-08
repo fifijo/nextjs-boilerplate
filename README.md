@@ -46,7 +46,7 @@ Copy [.env.example] and rename it to `.env` then add your environment variables.
 
 You can then access your applications on `http://localhost:3000`.
 
-To build production image, just set `prod` in  `--profile` flag.
+To build production image, just set `prod` in  `--profile` flag and in `.env` change the value of `NODE_ENV` to `production`
 
 
 ### Makefile
