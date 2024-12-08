@@ -1,6 +1,6 @@
 ## Next.js Monorepo Boilerplate  WORK IN PROGRESS
 
-Welcome to the Next.js Monorepo Boilerplate! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo.
+Welcome to the Next.js Monorepo Boilerplate(NextJs 15, ReactJs 19)! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo. It contains a basic auth based on Next-auth.
 
 ## 🚀 What's inside?
 
@@ -34,6 +34,7 @@ Copy [.env.example] and rename it to `.env` then add your environment variables.
 1. Build the image.
 
 ```bash
+   pnpm install
    docker-compose --profile dev build
 ```
 
