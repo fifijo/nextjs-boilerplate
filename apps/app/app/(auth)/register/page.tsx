@@ -1,5 +1,6 @@
+import type { JSX } from 'react'
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@repo/ui/components/ui/card'
 import { RegisterClient } from './client'
 
 export default function RegisterPage(): JSX.Element {

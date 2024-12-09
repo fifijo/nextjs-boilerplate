@@ -1,11 +1,12 @@
 'use client'
 
+import type { JSX } from 'react'
 import { Loader2Icon } from 'lucide-react'
-//@ts-ignore
 import { useFormStatus } from 'react-dom'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import type { ButtonProps } from '@/components/ui/button'
+import { cn } from '@repo/ui/lib/utils'
+import { Button } from '@repo/ui/components/ui/button'
+import type { ButtonProps } from '@repo/ui/components/ui/button'
+
 
 export function ActionButton({ children, className, disabled, ...props }: ButtonProps) : JSX.Element {
  const { pending } = useFormStatus()

@@ -1,14 +1,13 @@
-## Next.js Monorepo Boilerplate  WORK IN PROGRESS
+## Next.js Monorepo Boilerplate
 
 Welcome to the Next.js Monorepo Boilerplate(NextJs 15, ReactJs 19)! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo. It contains a basic auth based on Next-auth.
 
 ## 🚀 What's inside?
 
 - `app`: [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/)
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-- `@repo/prisma`: Prisma schema and client for database interactions
+- `@repo/ui`:  a stub React component library with [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com//)
 
 Additional tools already setup:
 

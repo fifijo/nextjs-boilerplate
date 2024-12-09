@@ -1,9 +1,10 @@
 
 import { Suspense } from 'react'
+import type { ReactNode, JSX } from "react"
 import { GlobalToaster } from '@/components/global-toaster'
-import '@/app/globals.css';
+import '@repo/ui/globals.css';
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) : JSX.Element {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) : JSX.Element {
  return (
   <html lang='en'>
    <body>

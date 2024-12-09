@@ -33,10 +33,16 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css"],
-  // add rules configurations here
+  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css", "tailwind.config.ts"],
   rules: {
     "import/no-default-export": "off",
+    "import/named": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-redundant-type-constituents": "off"
   },
   overrides: [
     {

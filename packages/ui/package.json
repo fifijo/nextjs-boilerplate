@@ -1,0 +1,44 @@
+{
+  "name": "@repo/ui",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ui": "pnpm dlx shadcn@latest",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "autoprefixer": "catalog:",
+    "postcss": "catalog:",
+    "postcss-load-config": "^6.0.1",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "react-hook-form": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "lucide-react": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss-animate": "catalog:"
+  },
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./hooks/*": [
+      "./src/hooks/*.ts",
+      "./src/hooks/*.tsx"
+    ],
+    "./components/*": "./src/components/*.tsx"
+  }
+}

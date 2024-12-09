@@ -3,6 +3,7 @@
 import toastLib, { Toaster } from 'react-hot-toast'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
+import type { JSX } from 'react'
 
 
 export function GlobalToaster() : JSX.Element {

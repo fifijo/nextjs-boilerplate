@@ -1,12 +1,12 @@
 'use client'
 
-//@ts-ignore
 import { useActionState } from 'react'
+import type { JSX } from 'react'
+import { Input } from "@repo/ui/components/ui/input";
+import { Label } from "@repo/ui/components/ui/label";
 import { register } from '@/actions/auth'
 import { ActionButton } from '@/components/action-button'
 import { FormError } from '@/components/form-error'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 
 export function RegisterClient(): JSX.Element {
  const [state, action] = useActionState(register, { errors: {} })

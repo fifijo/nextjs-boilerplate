@@ -1,8 +1,9 @@
+import type { JSX } from 'react'
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@repo/ui/components/ui/card'
 import { ForgotClient } from './client'
 
-export default function ForgotPage(): JSX.Element {
+export default function ForgotPage() : JSX.Element {
  return (
   <Card className='mx-auto max-w-sm border-0 shadow-none mt-4 sm:mt-12 sm:border sm:shadow-sm md:mt-20 lg:mt-24 xl:mt-28'>
    <CardHeader>

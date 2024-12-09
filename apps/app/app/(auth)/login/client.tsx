@@ -1,14 +1,14 @@
-//@ts-nocheck
 'use client'
 
 import { useActionState } from 'react'
+import type { JSX } from 'react'
 import Link from 'next/link'
+import { Input } from "@repo/ui/components/ui/input";
+import { Label } from "@repo/ui/components/ui/label";
+import { Button } from '@repo/ui/components/ui/button'
 import { login } from '@/actions/auth'
 import { ActionButton } from '@/components/action-button'
 import { FormError } from '@/components/form-error'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 
 export function LoginClient(): JSX.Element {
  const [state, action] = useActionState(login, { errors: {} })

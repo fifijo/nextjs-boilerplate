@@ -1,4 +1,3 @@
-//@ts-nocheck
 import NextAuth from 'next-auth'
 import type { NextAuthConfig } from 'next-auth'
 import { PrismaAdapter } from '@auth/prisma-adapter'
@@ -12,7 +11,7 @@ export const authConfig = {
     adapter: PrismaAdapter(prisma),
     callbacks: {
     authorized: ({ auth, request: { nextUrl } }) => {
-    const isAuthed = Boolean(auth?.user)
+    const isAuthed = auth && Boolean(auth.user)
     const isAuthRoute =
         nextUrl.pathname.startsWith('/login') || nextUrl.pathname.startsWith('/register') || nextUrl.pathname.startsWith('/forgot')
 
@@ -43,7 +42,7 @@ export const authConfig = {
     session: { strategy: 'jwt' }
 } satisfies NextAuthConfig
 
-export const auth = async (): Promise<{name: string}> => {
+export const auth = async (): Promise<{name: string | null}> => {
     const session = await NextAuth(authConfig).auth()
     if (!session?.user) throw new Error('Not authenticated.')
 

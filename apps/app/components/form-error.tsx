@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import type { JSX } from "react"
 import { toast } from 'react-hot-toast'
 
 export function FormError({ hidden = false, value }: { hidden?: boolean; value: string[] | undefined }) : JSX.Element {

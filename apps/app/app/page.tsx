@@ -1,11 +1,9 @@
 import type { ReactNode } from 'react'
 import { LogOutIcon } from 'lucide-react'
+import { Card, CardFooter, CardHeader, CardTitle } from "@repo/ui/components/ui/card";
 import { logout } from '@/actions/auth'
 import { ActionButton } from '@/components/action-button'
-import { Card, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { auth } from '@/lib/auth'
-
-
 
 export default async function RootPage(): Promise<ReactNode> {
  const user = await auth()

@@ -1,12 +1,13 @@
-//@ts-nocheck
 'use client'
 
 import { useActionState } from 'react'
+import type { JSX } from 'react'
+import { Input } from "@repo/ui/components/ui/input";
+import { Label } from "@repo/ui/components/ui/label";
 import { verifyEmail } from '@/actions/auth'
 import { ActionButton } from '@/components/action-button'
 import { FormError } from '@/components/form-error'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+
 
 
 export function ForgotClient(): JSX.Element {
