@@ -39,3 +39,4 @@ dist/
 
 *.md
 apps/app/tsconfig.tsbuildinfo
+.vscode
