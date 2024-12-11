@@ -1,4 +1,4 @@
-## Next.js Monorepo Boilerplate
+## Next.js 15 and React 19 Monorepo Boilerplate
 
 Welcome to the Next.js Monorepo Boilerplate(NextJs 15, ReactJs 19)! This boilerplate provides a solid foundation for managing complex web applications with multiple applications and shared packages in a single, efficient monorepo. It contains a basic auth based on Next-auth.
 
@@ -19,7 +19,7 @@ Additional tools already setup:
 
 ## 🤖 Installation
 
-To get started, clone the repository. Make sure you have [Node.js](https://nodejs.org/), [pnpm](https://pnpm.js.org/) and Docker installed.
+To get started, clone the repository. Make sure you have [Node.js](https://nodejs.org/), [pnpm](https://pnpm.js.org/) and [Docker](https://docker.com/) installed.
 
 ## 🤸 Quick Start
 
